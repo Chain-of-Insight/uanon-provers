@@ -33,18 +33,19 @@ let fields = ["World"];
 // Methods
 /**
  * @param {Array} a : Array of solutions
+ * @param {Boolean} verbose : Enable verbose debug output
  * @return {Boolean}
  */
-function prove (a) {
+function prove (a, verbose = false) {
   if (!Array.isArray(a)) {
     return false;
   } else if (!a.length) {
     return false;
   }
   // Generate hash
-  let generatedProof = (isTx) ? h.g(JSON.stringify(a), (DEFAULT_OP_SIZE - 1)) : h.g(JSON.stringify(a), DEFAULT_DEPTH);
+  let generatedProof = (isTx) ? h.g(JSON.stringify(a), (DEFAULT_OP_SIZE - 1), verbose) : h.g(JSON.stringify(a), DEFAULT_DEPTH, verbose);
   // Is verified proof
-  const v = (isTx) ? h.v(generatedProof, publicKey, DEFAULT_OP_SIZE, (DEFAULT_OP_SIZE - 1)) : h.v(generatedProof, publicKey, DEFAULT_SIZE, DEFAULT_DEPTH);
+  const v = (isTx) ? h.v(generatedProof, publicKey, DEFAULT_OP_SIZE, (DEFAULT_OP_SIZE - 1), verbose) : h.v(generatedProof, publicKey, DEFAULT_SIZE, DEFAULT_DEPTH, verbose);
   lastHash = generatedProof;
   return v;
 }
@@ -52,25 +53,13 @@ function prove (a) {
 // Worker
 function main () {
   // Basic prover
-  let verified = prove(fields), msg;
+  let verified, msg;
 
   // Verbose debug
   if (verboseDebug) {
-    let e = JSON.stringify(fields), size = (isTx) ? DEFAULT_OP_SIZE : DEFAULT_SIZE;
-    let truthChain = [{depth: 0, private: e}];
-    for (let i = 1; i < size; i++) {
-      e = h.g(e, i);
-      if (e) {
-        truthChain.push({depth: i, proof: e});
-      } else {
-        console.warn('Error creating tree');
-        return;
-      }
-      if (i == (size - 1)) {
-        truthChain.push({depth: size, public: publicKey});
-      }
-    }
-    console.log("Full hash chain:\n", truthChain);
+    verified = prove(fields, true);
+  } else {
+    verified = prove(fields);
   }
 
   // Regular debug
