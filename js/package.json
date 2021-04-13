@@ -1,0 +1,16 @@
+{
+  "name": "uanon-proofs-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "uanon.helloworld.js",
+  "scripts": {
+    "ascension": "node uanon.ascension.js"
+  },
+  "keywords": [],
+  "author": "support@chainofinsight.com",
+  "license": "MIT",
+  "dependencies": {
+    "blake2b": "^2.1.3",
+    "dotenv": "^8.2.0"
+  }
+}
