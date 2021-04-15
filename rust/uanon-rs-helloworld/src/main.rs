@@ -31,7 +31,7 @@ fn main() {
     // Set padding
     let _usize = fieldstr.len();
     let len_bytes = _usize.to_be_bytes();
-    let padded_bytes = &len_bytes[4.._usize-1];
+    let padded_bytes = &len_bytes[4..(len_bytes.len())];
     let padded_bytes_s = str::from_utf8(padded_bytes).unwrap();
 
     // Hash routine
