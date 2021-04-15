@@ -2,6 +2,7 @@
 *.ini
 node_modules/
 package-lock.json
+Cargo.lock
 .env
 sandbox/
 target/

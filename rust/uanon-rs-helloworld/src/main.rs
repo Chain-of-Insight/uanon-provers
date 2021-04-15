@@ -10,7 +10,6 @@
  */
 
 extern crate hex;
-extern crate array_init;
 extern crate blake2_rfc;
 
 use std::str;

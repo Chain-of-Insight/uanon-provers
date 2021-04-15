@@ -1,10 +1,9 @@
 [package]
 name = "uanon-rs"
 version = "0.1.0"
-authors = ["Drew Taylor <drew@infiniteinternet.ca>"]
+authors = ["Chain of Insight <support@chainofinsight.com>"]
 edition = "2018"
 
 [dependencies]
 blake2-rfc = "0.2.18"
 hex = "0.4.3"
-array-init = "2.0.0"
