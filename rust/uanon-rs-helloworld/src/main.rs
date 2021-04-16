@@ -19,7 +19,7 @@ static PUBLIC_KEY: &str = "df69b9d584c7594c819796d31b8c9b174a3c2f45f3a1e9f3443ce
 
 fn main() {
     // Configure script
-    let iterations: u8 = 3; // Default chain size
+    let iterations: u8 = 3; // Default chain size; Not a configurator in this version - just a status output
     println!("Chain Size: {}", iterations);
 
     // Configure password args.

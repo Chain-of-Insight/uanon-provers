@@ -31,7 +31,7 @@ fn main() {
     dotenv::dotenv().ok();
 
     // Configure script
-    let iterations: u16 = 1001; // Default chain size
+    let iterations: u32 = 1001; // Default chain size
     println!("Chain Size: {}", iterations);
 
     // Configure password args.
@@ -86,7 +86,7 @@ fn main() {
     let recur_hasher = recur_fn(|recur_hasher, mut h: Hash| {
         if h.n < 1 {
             h
-        } else if h.n >= 1001 {
+        } else if h.n >= iterations {
             h
         } else {
             // Instance
