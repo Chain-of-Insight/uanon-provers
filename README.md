@@ -59,3 +59,54 @@ cargo build
 ```
 # XXX TODO: add this
 ```
+
+---
+
+### Perfomance Stats:
+
+_Benchmarked on i7-7700 @ 3.6GHz_
+
+#### Node.js
+```
+$ time npm run helloworld
+# ...
+> real    0m0.219s
+> user    0m0.209s
+> sys     0m0.046s
+
+$ time npm run ascension
+# ...
+> real    0m0.299s
+> user    0m0.304s
+> sys     0m0.024s
+```
+
+#### Python3
+```
+$ time python3 uanon.helloworld.py
+# ...
+> real    0m0.029s
+> user    0m0.028s
+> sys     0m0.000s
+
+$ time python3 uanon.ascension.py
+# ...
+> real    0m0.054s
+> user    0m0.054s
+> sys     0m0.000s
+```
+
+#### Rust
+```
+$ time ./uanon-rs-helloworld/target/debug/uanon-rs
+# ...
+> real    0m0.001s
+> user    0m0.002s
+> sys     0m0.000s
+
+$ time ./uanon-rs-ascension/target/debug/uanon-rs
+# ...
+> real    0m0.035s
+> user    0m0.009s
+> sys     0m0.026s
+```
