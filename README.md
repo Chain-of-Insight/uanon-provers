@@ -11,7 +11,7 @@ cp env.example .env
 
 ## Node.js
 ```
-cd js
+cd js/
 npm install
 
 # Prove Tutorial 1
@@ -23,7 +23,7 @@ npm run ascension
 
 ## Python3
 ```
-cd python
+cd python/
 pip install python-dotenv
 pip install hashlib
 
