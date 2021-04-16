@@ -13,8 +13,10 @@ cp env.example .env
 ```
 cd js
 npm install
+
 # Prove Tutorial 1
 npm run helloworld
+
 # Prove Tutorial Ascension
 npm run ascension
 ```
@@ -24,10 +26,13 @@ npm run ascension
 cd python
 pip install python-dotenv
 pip install hashlib
+
 # Prove Tutorial 1
 python uanon.helloworld.py
+
 # Prove Tutorial Ascension
 python uanon.ascension.py
+
 # Hash arbitrary string to an arbitrary depth
 chmod +x cli.prover.py
 ./cli.prover.py "[\"World\"]" 2
@@ -38,10 +43,12 @@ chmod +x cli.prover.py
 ## Rust
 ```
 cd rust/
+
 # Prove Tutorial 1
 cd uanon-rs-helloworld/
 cargo build
 ./target/debug/uanon-rs
+
 # Prove Tutorial Ascension
 cd ../uanon-rs-ascension/
 cargo build
