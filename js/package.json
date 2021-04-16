@@ -4,6 +4,7 @@
   "description": "",
   "main": "uanon.helloworld.js",
   "scripts": {
+    "helloworld": "node uanon.helloworld.js",
     "ascension": "node uanon.ascension.js"
   },
   "keywords": [],
