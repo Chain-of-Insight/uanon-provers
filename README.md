@@ -79,6 +79,19 @@ $ time npm run ascension
 > real    0m0.299s
 > user    0m0.304s
 > sys     0m0.024s
+
+# Removing npm call wrapper increases speed
+$ time node uanon.helloworld.js
+# ...
+> real    0m0.041s
+> user    0m0.033s
+> sys     0m0.016s
+
+$ time node uanon.ascension.js
+# ...
+> real    0m0.126s
+> user    0m0.111s
+> sys     0m0.023s
 ```
 
 #### Python3
@@ -93,7 +106,7 @@ $ time python3 uanon.ascension.py
 # ...
 > real    0m0.054s
 > user    0m0.054s
-> sys     0m0.000s
+> sys     0m0.000s 
 ```
 
 #### Rust
