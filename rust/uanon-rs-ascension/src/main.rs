@@ -15,7 +15,6 @@ extern crate dotenv;
 extern crate blake2_rfc;
 
 use std::str;
-// use arr_macro::arr;
 use recur_fn::{recur_fn, RecurFn};
 use blake2_rfc::blake2b::{Blake2b, Blake2bResult};
  
