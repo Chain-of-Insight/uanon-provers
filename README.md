@@ -135,4 +135,15 @@ $ time ./uanon-rs-ascension/target/debug/uanon-rs
 
 #### Go
 ```
+$ time ./uanon.helloworld
+# ...
+> real    0m0.004s
+> user    0m0.004s
+> sys     0m0.000s
+
+$ time ./uanon.ascension
+# ...
+real    0m0.011s
+user    0m0.012s
+sys     0m0.000s
 ```
