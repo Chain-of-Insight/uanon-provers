@@ -57,7 +57,16 @@ cargo build
 
 ## Go
 ```
-# XXX TODO: add this
+cd go/
+ln -s ../.env ./
+
+# Prove Tutorial 1
+go build uanon.helloworld.go
+./uanon.helloworld
+
+# Prove Tutorial Ascension
+go build uanon.ascension.go
+./uanon.ascension
 ```
 
 ---
@@ -122,4 +131,8 @@ $ time ./uanon-rs-ascension/target/debug/uanon-rs
 > real    0m0.035s
 > user    0m0.009s
 > sys     0m0.026s
+```
+
+#### Go
+```
 ```
