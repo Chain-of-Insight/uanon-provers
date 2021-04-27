@@ -43,7 +43,7 @@ func genProof(msg string, depth int) []byte {
     for i := 0; i < depth; i++ {
         proof = hasher(proof)
         hexed := hex.EncodeToString(proof)
-        s := fmt.Sprintf("Depth %d: %s", i, hexed)
+        s := fmt.Sprintf("Depth %d: %s", (i+1), hexed)
         fmt.Println(s)
     }
     return proof
@@ -66,6 +66,8 @@ func main() {
     passwords[0] = "World"
     json, _ := json.Marshal(passwords)
     // Generate
+    s := fmt.Sprintf("Raw Secret: %s", string(json))
+    fmt.Println(s)
     res := genProof(string(json), iterations)
     hexed := hex.EncodeToString(res)
     // Validate
