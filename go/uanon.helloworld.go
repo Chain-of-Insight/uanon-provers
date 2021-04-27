@@ -20,7 +20,9 @@ import (
     "github.com/stretchr/testify/assert"
 )
 
+// Configurable
 const PUBLIC_KEY = "df69b9d584c7594c819796d31b8c9b174a3c2f45f3a1e9f3443ce4831584c074"
+const PWD_ARRAY_SIZE = 1
 const iterations = 2
 
 func hasher(data []byte) []byte {
@@ -60,7 +62,7 @@ func AssertEquals(t *testing.T, res string) {
 
 func main() {
     // Init
-    var passwords [1]string
+    var passwords [PWD_ARRAY_SIZE]string
     passwords[0] = "World"
     json, _ := json.Marshal(passwords)
     // Generate
