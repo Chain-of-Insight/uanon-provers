@@ -49,7 +49,7 @@ func genProof(msg string, depth int) []byte {
 
 func AssertEquals(t *testing.T, res string) {
     assert := assert.New(t)
-    equality := assert.Equal(t, res, PUBLIC_KEY)
+    equality := assert.Equal(res, PUBLIC_KEY)
     if equality {
         s := fmt.Sprintf("Final hash %s and Public Key %s are equivalent", res, PUBLIC_KEY)
         fmt.Println(s)   
