@@ -61,7 +61,7 @@ func AssertEquals(t *testing.T, res string) {
 func main() {
     // Init
     var passwords [1]string
-    passwords[0] = "Worl"
+    passwords[0] = "World"
     json, _ := json.Marshal(passwords)
     // Generate
     res := genProof(string(json), iterations)
