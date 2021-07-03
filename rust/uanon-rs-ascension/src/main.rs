@@ -81,7 +81,7 @@ fn main() {
     println!("Raw Secret: {:?}", fieldstr_s);
     println!("Depth 1: {:?}", out);
 
-    // Recusive hash routine
+    // Recursive hash routine
     let recur_hasher = recur_fn(|recur_hasher, mut h: Hash| {
         if h.n < 1 {
             h
