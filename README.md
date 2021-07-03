@@ -1,6 +1,6 @@
 # uanon-provers
 
-##### Implementations of the Uanon PoPMG crypto-proofs system in various programming languages. These hashers can be edited to verify you have the correct solution a puzzle listed by the [Project Uanon Puzzle Oracle](https://better-call.dev/mainnet/KT1VJsKdNFYueffX6xcfe6Gg9eJA6RUnFpYr/operations) on Tezos. Language implementations include examples of both the first Tutorial (https://uanon.observer/tutorial/1) and Tutorial ascension puzzles (https://uanon.observer/learn - accessible only if you solved Tutorials 1 - 5).
+##### Implementations of the Uanon PoPMG crypto-proofs system in various programming languages. These hashers can be edited to verify you have the correct solution to puzzles listed in the [Project Uanon Puzzle Oracle](https://better-call.dev/mainnet/KT1VJsKdNFYueffX6xcfe6Gg9eJA6RUnFpYr/operations) on Tezos. Language implementations include examples of both the first Tutorial (https://uanon.observer/tutorial/1) and Tutorial ascension puzzles (https://uanon.observer/learn - accessible only if you solved Tutorials 1 - 5).
 
 ## Environment
 For testing the Tutorial ascension scripts you'll need to add your proofs for Tutorials 1 - 5 into a `.env` file in the parent folder.
