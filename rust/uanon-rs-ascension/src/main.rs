@@ -12,7 +12,6 @@
 extern crate hex;
 extern crate json;
 extern crate dotenv;
-extern crate blake2_rfc;
 
 use std::str;
 use recur_fn::{recur_fn, RecurFn};
