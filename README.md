@@ -46,19 +46,23 @@ cd rust/
 
 # Prove Tutorial 1
 cd uanon-rs-helloworld/
-cargo build
-./target/debug/uanon-rs
+cargo build --release
+./target/release/uanon-rs
 
 # Prove Tutorial Ascension
 cd ../uanon-rs-ascension/
-cargo build
-./target/debug/uanon-rs
+cargo build --release
+./target/release/uanon-rs
 ```
 
 ## Go
 ```
 cd go/
 ln -s ../.env ./
+
+go install github.com/joho/godotenv@latest
+go install github.com/stretchr/testify/assert@latest
+go install golang.org/x/crypto/blake2b@latest
 
 # Prove Tutorial 1
 go build uanon.helloworld.go
@@ -120,30 +124,30 @@ $ time python3 uanon.ascension.py
 
 #### Rust
 ```
-$ time ./uanon-rs-helloworld/target/debug/uanon-rs
+$ time ./uanon-rs-helloworld/target/release/uanon-rs
 # ...
 > real    0m0.001s
-> user    0m0.002s
+> user    0m0.001s
 > sys     0m0.000s
 
-$ time ./uanon-rs-ascension/target/debug/uanon-rs
+$ time ./uanon-rs-ascension/target/release/uanon-rs
 # ...
-> real    0m0.035s
-> user    0m0.009s
-> sys     0m0.026s
+> real    0m0.013s
+> user    0m0.008s
+> sys     0m0.000s
 ```
 
 #### Go
 ```
 $ time ./uanon.helloworld
 # ...
-> real    0m0.004s
-> user    0m0.004s
+> real    0m0.003s
+> user    0m0.003s
 > sys     0m0.000s
 
 $ time ./uanon.ascension
 # ...
-real    0m0.011s
-user    0m0.012s
-sys     0m0.000s
+> real    0m0.011s
+> user    0m0.000s
+> sys     0m0.009s
 ```
