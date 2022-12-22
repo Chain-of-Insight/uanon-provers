@@ -127,14 +127,14 @@ $ time python3 uanon.ascension.py
 $ time ./uanon-rs-helloworld/target/release/uanon-rs
 # ...
 > real    0m0.001s
-> user    0m0.001s
+> user    0m0.000s
 > sys     0m0.000s
 
 $ time ./uanon-rs-ascension/target/release/uanon-rs
 # ...
-> real    0m0.013s
-> user    0m0.008s
-> sys     0m0.000s
+> real    0m0.009s
+> user    0m0.000s
+> sys     0m0.009s
 ```
 
 #### Go
