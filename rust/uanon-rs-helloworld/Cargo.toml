@@ -7,3 +7,6 @@ edition = "2018"
 [dependencies]
 blake2-rfc = "0.2.18"
 hex = "0.4.3"
+json = "0.12.4"
+dotenv = "0.15.0"
+recur-fn = "2.2.0"

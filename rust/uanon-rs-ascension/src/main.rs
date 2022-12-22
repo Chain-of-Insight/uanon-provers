@@ -71,40 +71,35 @@ fn main() {
     hasher.update(padded_bytes);
     hasher.update(fieldstr);
 
-    // Finalize
-    let res = hasher.finalize();
-    let out_b = res.as_bytes();
-
-    // Output, depth 0, 1
-    let out = hex::encode(out_b);
-    println!("Raw Secret: {:?}", fieldstr_s);
-    println!("Depth 1: {:?}", out);
-
     // Recursive hash routine
     let recur_hasher = recur_fn(|recur_hasher, mut h: Hash| {
-        if h.n < 1 {
-            h
-        } else if h.n >= iterations {
+        if h.n >= iterations {
             h
         } else {
-            // Instance
-            let mut blake = Blake2b::new(32);
-            blake.update(h.res.as_bytes());
-            // Finalize
-            let res = blake.finalize();
-            h.res = res.clone();
-            h.n += 1;
             // Output
             let out_b = h.res.as_bytes();
             let out = hex::encode(out_b);
             println!("Depth {:?}: {:?}", h.n, out);
+            
+            // Instance
+            let mut blake = Blake2b::new(32);
+            blake.update(h.res.as_bytes());
+            
+            // Finalize
+            let res = blake.finalize();
+            h.res = res.clone();
+            h.n += 1;
+            
             // Return
             recur_hasher(h)
         }
     });
+
+    println!("Raw Secret: {:?}", fieldstr_s);
+
     let start = Hash {
         n: 1,
-        res: res.clone(),
+        res: hasher.finalize(),
     };
     let recb = recur_hasher.call(start);
     let final_out = hex::encode(recb.res.as_bytes());
